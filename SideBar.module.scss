@@ -1,0 +1,72 @@
+/* SideBar.module.scss */
+
+.wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    /* Ширина вашей панели */
+    height: 100vh;
+    /* Высота равная высоте окна браузера */
+    background-color: #e5f2ff;
+    z-index: 1000;
+    /* Задний план, чтобы не перекрывать другие элементы */
+    transform: translateX(0);
+    /* По умолчанию панель видна */
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    /* Добавьте скролл при необходимости */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar.hide_sidebar {
+    transform: translateX(-250px);
+    /* Скрыть панель за пределами экрана */
+}
+
+.indicator {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #e5f2ff;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #ddd;
+    }
+}
+
+.content {
+    padding: 20px;
+}
+
+.mainContent {
+    flex: 1;
+    /* Основной контент занимает всю оставшуюся ширину */
+    /* Добавьте стили для вашего основного контента */
+}
+
+.category {
+    font-size: 20px;
+    /* padding: 5px; */
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #c2e7ff;
+        /* Цвет при наведении */
+        /* Другие стили при наведении, если нужно */
+    }
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+/* Добавьте стили для элементов меню, категорий и т.д., по вашему усмотрению */
